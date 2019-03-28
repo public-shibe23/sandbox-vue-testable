@@ -1,23 +1,29 @@
 import { fetchProducts } from "../api";
 
-const store = {};
-const getters = {};
+const state = {};
+const getters = {
+  getItemList: state => {
+    return state.items;
+  }
+};
 const mutations = {
-  SET_ITEMS: (state, { items }) => {
-    state.items = items;
+  SET_ITEMS: (state, payload) => {
+    console.log(payload);
+    state.items = { ...state.items, payload };
+    console.log(state.items);
   }
 };
 const actions = {
   FETCH_PRODUCTS: async ({ commit }) => {
     const res = await fetchProducts();
     console.log(res.data);
-    commit("SET_ITEMS", { res });
+    commit("SET_ITEMS", res.data);
   }
 };
 
 export default {
   namespaced: true,
-  store,
+  state,
   getters,
   mutations,
   actions
