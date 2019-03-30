@@ -9,8 +9,8 @@ const getters = {
 const mutations = {
   SET_ITEMS: (state, payload) => {
     console.log(payload);
-    state.items = { ...state.items, payload };
-    console.log(state.items);
+    state.items = { ...state.items, ...payload };
+    console.log(state);
   }
 };
 const actions = {
