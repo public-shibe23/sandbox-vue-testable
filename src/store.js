@@ -1,10 +1,10 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import ApiCallTest from "./store/api_call_test";
+import ProductList from "./store/ProductList";
 
 Vue.use(Vuex);
 export default new Vuex.Store({
   modules: {
-    ApiCallTest
+    ProductList
   }
 });

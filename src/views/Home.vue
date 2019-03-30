@@ -1,21 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <ApiCallTestable />
+  <div>
+    <ProductList :products="products" @fetch="fetchProducts" />
+    <button @click="onclick">ckick</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-import ApiCallTestable from "@/components/ApiCallTestable.vue";
+import ProductList from "@/components/ProductList.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "home",
   components: {
-    HelloWorld,
-    ApiCallTestable
+    ProductList
+  },
+  computed: mapState({
+    products: state => state.ProductList.products
+  }),
+  methods: {
+    fetchProducts() {
+      this.$store.dispatch("ProductList/FETCH_PRODUCTS");
+    },
+
+    onclick() {
+      console.log(this.$store);
+    }
   }
 };
 </script>
