@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="fetch">test!</button>
+    <button class="button" @click="fetch">test!</button>
     <p v-for="product in products" :key="product.id">{{ product.name }}</p>
   </div>
 </template>

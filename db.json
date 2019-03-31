@@ -9,21 +9,25 @@
       {
         "id": "1000",
         "name": "T-shirts",
+        "price": 980,
         "stock": 20
       },
       {
         "id": "1001",
         "name": "Skirts",
+        "price": 2200,
         "stock": 0
       },
       {
         "id": "1002",
         "name": "Shoes",
+        "price": 3800,
         "stock": 12
       },
       {
         "id": "1003",
         "name": "Socks",
+        "price": 520,
         "stock": 100
       }
     ]

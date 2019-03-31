@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ProductList :products="products" @fetch="fetchProducts" />
+    <ProductList :products="products" @fetch="fetchProducts"/>
     <button @click="onclick">ckick</button>
   </div>
 </template>
@@ -16,11 +16,17 @@ export default {
     ProductList
   },
   computed: mapState({
-    products: state => state.ProductList.products
+    products: state => state.ProductList.products,
   }),
   methods: {
     fetchProducts() {
       this.$store.dispatch("ProductList/FETCH_PRODUCTS");
+    },
+
+    getTotal(products) {
+      return products.reduce((accum, current) => {
+        accum + current;
+      });
     },
 
     onclick() {
