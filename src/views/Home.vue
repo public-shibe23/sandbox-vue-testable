@@ -1,7 +1,7 @@
 <template>
   <div>
     <ProductList :products="products" @fetch="fetchProducts"/>
-    <button @click="onclick">ckick</button>
+    <button @click="onclick">store</button>
   </div>
 </template>
 

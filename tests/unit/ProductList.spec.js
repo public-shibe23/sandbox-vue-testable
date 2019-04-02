@@ -11,6 +11,7 @@ describe("ProductList.vue", () => {
   let actions;
   let state;
   let store;
+  let wrapper;
 
   beforeEach(() => {
     state = {
@@ -38,14 +39,17 @@ describe("ProductList.vue", () => {
         }
       }
     });
+    wrapper = mount(Home, { store, localVue });
   });
 
-  it("fetches async when a button is clicked", () => {
-    const wrapper = mount(Home, { store, localVue });
-    console.log(wrapper.html());
+  it("Clickボタンを押すと、actions.FETCH_PRODUCTSが呼ばれる", () => {
     const button = wrapper.find(".button");
     console.log(wrapper.text());
     button.trigger("click");
     expect(actions.FETCH_PRODUCTS).toHaveBeenCalled();
+  });
+
+  it("match snapshot", () => {
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });
