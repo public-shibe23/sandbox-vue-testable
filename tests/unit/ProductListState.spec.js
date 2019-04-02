@@ -3,6 +3,8 @@ import Vuex from "vuex";
 import { mutations, actions } from "@/store/ProductList";
 import { cloneDeep } from "lodash";
 
+jest.setTimeout("30000");
+
 const state = {
   products: [
     {
@@ -37,18 +39,13 @@ describe("ProductList.vue", () => {
     store = new Vuex.Store(initStore());
   });
 
-  it("商品一覧を取得できる", done => {
-    store.dispatch("ProductList/FETCH_PRODUCTS");
-    setTimeout(() => {
-      expect(store.state.products).toEqual([
-        {
-          id: 1000,
-          name: "T-shirts",
-          price: 980,
-          stock: 20
-        }
-      ]);
-      done();
-    }, 3000);
+  it("商品一覧を取得できる", async () => {
+    await store.dispatch("ProductList/FETCH_PRODUCTS");
+    expect(store.state.ProductList.products[0]).toEqual({
+      id: "1000",
+      name: "T-shirts",
+      price: 980,
+      stock: 20
+    });
   });
 });
