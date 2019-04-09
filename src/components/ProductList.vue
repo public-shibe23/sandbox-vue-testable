@@ -1,7 +1,30 @@
 <template>
   <div>
-    <button class="button" @click="fetch">test!</button>
-    <p v-for="product in products" :key="product.id">{{ product.name }}</p>
+    <div class="field">
+      <button class="button" @click="fetch">Search</button>
+    </div>
+    <table class="table is-fullwidth" v-if="products.length">
+      <tr>
+        <th>
+          <abbr title="ID">ID</abbr>
+        </th>
+        <th>
+          <abbr title="Name">Name</abbr>
+        </th>
+        <th>
+          <abbr title="Stock">Stock</abbr>
+        </th>
+        <th>
+          <abbr title="Price">Price</abbr>
+        </th>
+      </tr>
+      <tr v-for="product in products" :key="product.id">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.stock }}</td>
+        <td>{{ product.price }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 

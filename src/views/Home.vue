@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <ProductList :products="products" @fetch="fetchProducts"/>
-    <button @click="onclick">store</button>
+  <div class="section">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <ProductList :products="products" @fetch="fetchProducts"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,22 +19,18 @@ export default {
     ProductList
   },
   computed: mapState({
-    products: state => state.ProductList.products,
+    products: state => state.ProductList.products
   }),
   methods: {
     fetchProducts() {
       this.$store.dispatch("ProductList/FETCH_PRODUCTS");
-    },
-
-    getTotal(products) {
-      return products.reduce((accum, current) => {
-        accum + current;
-      });
-    },
-
-    onclick() {
-      console.log(this.$store);
     }
   }
 };
 </script>
+
+<style scoped>
+.inner {
+  margin: 2em 0;
+}
+</style>
