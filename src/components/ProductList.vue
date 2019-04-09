@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="field">
-      <button class="button" @click="fetch">Search</button>
+      <button class="button is-primary is-outlined" @click="fetch">Search</button>
     </div>
     <table class="table is-fullwidth" v-if="products.length">
       <tr>
