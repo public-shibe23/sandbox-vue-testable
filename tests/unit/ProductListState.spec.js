@@ -3,8 +3,6 @@ import Vuex from "vuex";
 import { mutations, actions } from "@/store/ProductList";
 import { cloneDeep } from "lodash";
 
-jest.setTimeout("30000");
-
 const state = {
   products: [
     {

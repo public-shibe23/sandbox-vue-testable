@@ -1,9 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProductList.vue match snapshot 1`] = `
-<div>
-  <div><button class="button">test!</button>
-    <p>T-shirts</p>
-  </div> <button>store</button>
+<div class="section">
+  <div class="columns is-centered">
+    <div class="column is-6">
+      <div>
+        <div class="field"><button class="button is-primary is-outlined">Search</button></div>
+        <table class="table is-fullwidth">
+          <tr>
+            <th><abbr title="ID">ID</abbr></th>
+            <th><abbr title="Name">Name</abbr></th>
+            <th><abbr title="Stock">Stock</abbr></th>
+            <th><abbr title="Price">Price</abbr></th>
+          </tr>
+          <tr>
+            <td>1000</td>
+            <td>T-shirts</td>
+            <td>20</td>
+            <td>980</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
 `;
