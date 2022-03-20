@@ -1,4 +1,5 @@
-# sandbox-vue-testable-nots
+# sandbox-vue-testable
+[async/awaitを使った処理をVue.js + Vuex + Jest でユニットテストする](https://qiita.com/shibe23/items/97100ffc333585a971c4)
 
 ## Project setup
 ```
